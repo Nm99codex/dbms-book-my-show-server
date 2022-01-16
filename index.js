@@ -30,12 +30,10 @@ import Movies from "./API/movies"
 
 bms.use("/movies", Movies);
 
-// // http://localhost:5000/
-// bms.get("/", (req, res) => {
-//     return res.json({"WELCOME": `to my Backend Software for the BookMyShow`});
-// });
+const PORT = process.env.PORT || 4000;
 
-bms.listen(5001, () => {
+
+bms.listen(PORT, () => {
     ConnectDB()
       .then(() => {
         console.log("Server is running !!!");
@@ -45,15 +43,3 @@ bms.listen(5001, () => {
         console.log(error);
       });
   });
-
-
-
-
-
-
-
-
-
-// app.listen(5000, () => {
-//     console.log("MY EXPRESS APP IS RUNNING.....")
-// });
